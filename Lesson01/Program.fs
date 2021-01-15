@@ -2,5 +2,5 @@
 
 [<EntryPoint>]
 let main argv =
-    SDL.SDL_Init(0u) |> ignore
+    SDL.SDL_Init(SDL.SDL_INIT_VIDEO) |> ignore
     0
