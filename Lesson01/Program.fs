@@ -1,8 +1,6 @@
-﻿// Learn more about F# at http://fsharp.org
-
-open System
+﻿open FSharp.SDL2
 
 [<EntryPoint>]
 let main argv =
-    printfn "Hello World from F#!"
-    0 // return an integer exit code
+    SDL.SDL_Init(0u) |> ignore
+    0

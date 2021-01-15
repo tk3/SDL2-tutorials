@@ -6,7 +6,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\library\x64\SDL2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup />
+
+  <ItemGroup>
+    <ProjectReference Include="..\FSharp.SDL2\FSharp.SDL2.fsproj" />
   </ItemGroup>
 
 </Project>
