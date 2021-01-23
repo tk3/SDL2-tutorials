@@ -1,6 +1,7 @@
 ﻿namespace FSharp.SDL2
 
 open System
+open System.Text
 open System.Runtime.InteropServices
 
 module SDL =
@@ -114,6 +115,37 @@ module SDL =
     [<DllImport(dllName, EntryPoint = "SDL_FillRect", CharSet = CharSet.Auto, CallingConvention = CallingConvention.Cdecl)>]
     // extern int SDL_FillRect(SDL_Surface * dst, SDL_Rect * rect, uint32 color)
     extern int FillRect(IntPtr dst, IntPtr rect, uint32 color)
+
+    [<DllImport(dllName, EntryPoint = "SDL_UpperBlit", CallingConvention = CallingConvention.Cdecl)>]
+    // extern DECLSPEC int SDLCALL SDL_UpperBlit (SDL_Surface * src, const SDL_Rect * srcrect, SDL_Surface * dst, SDL_Rect * dstrect);
+    extern int UpperBlit(IntPtr src, IntPtr srcrect, IntPtr dst, IntPtr dstrect)
+
+    [<DllImport(dllName, EntryPoint = "SDL_LoadBMP_RW", CallingConvention = CallingConvention.Cdecl)>]
+    // extern DECLSPEC SDL_Surface *SDLCALL SDL_LoadBMP_RW(SDL_RWops * src, int freesrc);
+    extern IntPtr LoadBMP_RW(IntPtr src, int freesrc)
+
+    [<DllImport(dllName, EntryPoint = "SDL_FreeSurface", CallingConvention = CallingConvention.Cdecl)>]
+    // extern DECLSPEC void SDLCALL SDL_FreeSurface(SDL_Surface * surface);
+    extern void FreeSurface(IntPtr surface)
+
+
+    ////////////////////////////////////////////////////////////////////////////
+    // SDL_rwops.h
+
+    [<DllImport(dllName, EntryPoint = "SDL_RWFromFile", CharSet = CharSet.Auto, CallingConvention = CallingConvention.Cdecl)>]
+    // extern DECLSPEC SDL_RWops *SDLCALL SDL_RWFromFile(const char *file, const char *mode);
+    extern IntPtr RWFromFile(byte[] file, byte[] mode)
+
+
+    ////////////////////////////////////////////////////////////////////////////
+    // SDL_surface.h
+
+    // #define SDL_LoadBMP(file)   SDL_LoadBMP_RW(SDL_RWFromFile(file, "rb"), 1
+    let LoadBMP(file: byte[]): IntPtr =
+        let utf16bytes = Encoding.Unicode.GetBytes("rb")
+        let utf8bytes = Encoding.Convert(Encoding.Unicode, Encoding.UTF8, utf16bytes)
+        let file = RWFromFile(file, utf8bytes)
+        LoadBMP_RW(file, 1)
 
 
     ////////////////////////////////////////////////////////////////////////////

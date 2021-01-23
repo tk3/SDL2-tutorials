@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharp.SDL2", "FSharp.SDL2\FSharp.SDL2.fsproj", "{3E50DA7E-A36C-45CD-9DD0-5B1B9096C840}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "FSharp.SDL2", "FSharp.SDL2\FSharp.SDL2.fsproj", "{3E50DA7E-A36C-45CD-9DD0-5B1B9096C840}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Lesson01", "Lesson01\Lesson01.fsproj", "{9D4C66E2-DE78-4CCE-9D8C-1DF81B559D63}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Lesson01", "Lesson01\Lesson01.fsproj", "{9D4C66E2-DE78-4CCE-9D8C-1DF81B559D63}"
+EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Lesson02", "Lesson02\Lesson02.fsproj", "{B826729F-8195-4982-AC7B-C328938BEF17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{9D4C66E2-DE78-4CCE-9D8C-1DF81B559D63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D4C66E2-DE78-4CCE-9D8C-1DF81B559D63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D4C66E2-DE78-4CCE-9D8C-1DF81B559D63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B826729F-8195-4982-AC7B-C328938BEF17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B826729F-8195-4982-AC7B-C328938BEF17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B826729F-8195-4982-AC7B-C328938BEF17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B826729F-8195-4982-AC7B-C328938BEF17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
